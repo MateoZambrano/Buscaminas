@@ -16,6 +16,8 @@ public class Compartimiento {
     private boolean tieneMina;
     private int numMinasAlrededor;
     private boolean abierta;
+    
+    // Buscaminas Pruebas
 
     public Compartimiento(int posicionFila, int posicionColumna) {
         this.posicionFila = posicionFila;
