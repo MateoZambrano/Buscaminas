@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaBuscaminas.IniciarSecionController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaBuscaminas.IniciarSecionController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -18,11 +17,11 @@
                   <Image url="@../Imagenes/Iniciar%20Sesion.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="txtNombreUsuario" layoutX="261.0" layoutY="311.0" onAction="#nombreUsuario" prefHeight="30.0" prefWidth="230.0" />
+            <TextField fx:id="txtNombreUsuario" layoutX="261.0" layoutY="311.0" prefHeight="30.0" prefWidth="230.0" />
             <Label layoutX="81.0" layoutY="313.0" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: yellow;" text=" NOMBRE DE USUARIO" />
             <Label contentDisplay="CENTER" layoutX="85.0" layoutY="357.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: yellow;" text=" CONTRASEÑA" />
-            <TextField fx:id="txtPastword" layoutX="261.0" layoutY="355.0" onAction="#pastword" prefHeight="30.0" prefWidth="230.0" />
-            <Button layoutX="215.0" layoutY="418.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: yellow;" text="CONFIRMAR" />
+            <TextField fx:id="txtPastword" layoutX="261.0" layoutY="355.0" prefHeight="30.0" prefWidth="230.0" />
+            <Button fx:id="btnConfirmar" layoutX="215.0" layoutY="418.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: yellow;" text="CONFIRMAR" />
          </children>
       </AnchorPane>
    </center>

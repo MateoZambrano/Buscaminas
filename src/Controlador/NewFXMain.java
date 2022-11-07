@@ -51,7 +51,7 @@ public class NewFXMain extends Application {
             // creamos el controlador de la ventana
             // enviamos el administrador Principal a la ventana abierta
             IniciarSecionController ventanaAbierta = loader.getController();
-            ventanaAbierta.setProgramaPrincipal(this);
+            //ventanaAbierta.setProgramaPrincipal(this);
             primaryStage.show();
 
         } catch (IOException ex) {

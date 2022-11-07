@@ -40,7 +40,7 @@ public class InicioBuscaminasController implements Initializable {
 
     @FXML
     private void iniciarJuego(ActionEvent event) {
-        System.out.println("Hola Como estas");
+        MenuPrincipal.llamarSegundaVentana();
     }
 
     @FXML

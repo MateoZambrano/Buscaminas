@@ -6,12 +6,13 @@
 package VistaBuscaminas;
 
 
-import Controlador.NewFXMain;
+import Controlador.Inicio;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 /**
@@ -24,11 +25,13 @@ public class IniciarSecionController implements Initializable {
     @FXML
     private TextField txtNombreUsuario;
     
-    private NewFXMain MenuPrincipal;
+    private Inicio MenuPrincipal;
     
     @FXML
     private TextField txtPastword;
-
+    @FXML
+    private Button btnConfirmar;
+   
     /**
      * Initializes the controller class.
      */
@@ -37,17 +40,19 @@ public class IniciarSecionController implements Initializable {
         // TODO
     }    
 
-    @FXML
     private void nombreUsuario(ActionEvent event) {
         System.out.println("hola como estas");
     }
 
-    @FXML
-    private void pastword(ActionEvent event) {
-    }
     
-    public void setProgramaPrincipal(NewFXMain ProgramaPrincipal){
+    public void setProgramaPrincipal(Inicio ProgramaPrincipal){
         this.MenuPrincipal = ProgramaPrincipal;
+    }
+
+    @FXML
+    private void iniciarSesion(ActionEvent event) {
+        System.out.println(txtNombreUsuario.getText());
+        System.out.println(txtPastword.getText());
     }
     
 }

@@ -60,4 +60,193 @@ public class Inicio extends Application {
         }
         
     }
+    
+    public void llamarSegundaVentana() {
+
+        try {
+
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Inicio.class.getResource("/VistaBuscaminas/IniciarSecion.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+
+            // Crear la escena
+            Scene scene = new Scene(rootLaoyut);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+
+            // creamos el controlador de la ventana
+            InicioBuscaminasController ventanaAbierta = loader.getController();
+            ventanaAbierta.setProgramaPrincipal(this);
+
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+    
+    /*
+
+    public void llamarJuegoTetris() {
+
+        try {
+
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/TetrisJuegoVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+
+            // Crear la escena
+            sceneT = new Scene(rootLaoyut);
+            primaryStage.setScene(sceneT);
+            primaryStage.setResizable(false);
+
+            // creamos el controlador de la ventana
+            // Tetris ventanaAbierta = loader.getController();
+            // ventanaAbierta.setProgramaTetris(this);
+            TetrisJuegoVistaController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+
+    public void abrirVentanaPausa() {
+
+        try {
+
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/PausaVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+
+            // Crear la escena
+            scenePausa = new Scene(rootLaoyut);
+            primaryStagePausa.setScene(scenePausa);
+            primaryStagePausa.setResizable(false);
+
+            PausaVistaController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStagePausa.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+
+    public void abrirVentanaGameOver() {
+        try {
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/GameOverVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+            // Crear la escena
+            Scene scene = new Scene(rootLaoyut);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            GameOverVistaController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+
+    public void llamarNivel() {
+        try {
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/NivelVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+            // Crear la escena
+            Scene scene = new Scene(rootLaoyut);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            NivelVistaController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+
+    public void llamarRanking() {
+        try {
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/rankingVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+            // Crear la escena
+            Scene scene = new Scene(rootLaoyut);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            RankingVistaController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+    
+    public void llamarComoQuitar() {
+        try {
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/GaleriaVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+            // Crear la escena
+            Scene scene = new Scene(rootLaoyut);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            Galeria_imagenesController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+    
+    
+    public void abririntrucciones() {
+        try {
+            // Para cargar el archivo fxml
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Administrador.class.getResource("/vista/GaleriaVista.fxml"));
+            rootLaoyut = (BorderPane) loader.load();
+            // Crear la escena
+            Scene scene = new Scene(rootLaoyut);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            Galeria_imagenesController controlador = loader.getController();
+            controlador.setAdmin(this);
+            primaryStage.show();
+
+        } catch (IOException ex) {
+            System.out.println("Error al cargar archivo externo");
+        }
+    }
+
+*/
+    
+    
+    
+
+    public Scene getSceneT() {
+        return sceneT;
+    }
+
+    public void setSceneT(Scene sceneT) {
+        this.sceneT = sceneT;
+    }
+
+    public Stage getPrimaryStagePausa() {
+        return primaryStagePausa;
+    }
 }
