@@ -15,17 +15,17 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
     
-    Connection conn = null;
+    Connection conn;
 
-    public static Connection connectDb() {
+    public Conexion() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/tetris", "root", "12345");
+            Class.forName("com.mysql.jdbc.Driver");
+            conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/buscaminas", "Mateo", "12345");
             System.out.println("Se ha conectado satisfactoriamente");
-            return conn;
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
-            return null;
+            
         }
     }
     

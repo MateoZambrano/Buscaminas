@@ -12,6 +12,7 @@ import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Inicio extends Application {
@@ -22,10 +23,10 @@ public class Inicio extends Application {
     private BorderPane rootLaoyut; // Es el borderPane
     public static Scene sceneT;
 
-     public static void main(String[] args) {
+    public static void main(String[] args) {
         launch(args);
     }
-     
+
     @Override
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
@@ -41,10 +42,10 @@ public class Inicio extends Application {
             // Para cargar el archivo fxml
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Inicio.class.getResource("/VistaBuscaminas/InicioBuscaminas.fxml"));
-            rootLaoyut = (BorderPane) loader.load();
+            Pane ventana = (Pane) loader.load();
 
-            // Crear la escena
-            Scene scene = new Scene(rootLaoyut);
+            // Muestra la escena que contiene el diseño raíz.
+            Scene scene = new Scene(ventana);
             primaryStage.setScene(scene);
             primaryStage.setResizable(false);
 
@@ -53,39 +54,29 @@ public class Inicio extends Application {
             InicioBuscaminasController ventanaAbierta = loader.getController();
             ventanaAbierta.setProgramaPrincipal(this);
             primaryStage.show();
-
-        } catch (IOException ex) {
-            System.out.println("Error al cargar archivo externo");
-
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
-        
+
     }
-    
+
     public void llamarSegundaVentana() {
 
         try {
-
-            // Para cargar el archivo fxml
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Inicio.class.getResource("/VistaBuscaminas/IniciarSecion.fxml"));
-            rootLaoyut = (BorderPane) loader.load();
+            loader.setLocation(NewFXMain.class.getResource("/VistaBuscaminas/IniciarSecion.fxml"));
+            Pane ventana = (Pane) loader.load();
 
-            // Crear la escena
-            Scene scene = new Scene(rootLaoyut);
+            // Muestra la escena que contiene el diseño raíz.
+            Scene scene = new Scene(ventana);
             primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
-
-            // creamos el controlador de la ventana
-            InicioBuscaminasController ventanaAbierta = loader.getController();
-            ventanaAbierta.setProgramaPrincipal(this);
-
             primaryStage.show();
 
-        } catch (IOException ex) {
-            System.out.println("Error al cargar archivo externo");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
-    
+
     /*
 
     public void llamarJuegoTetris() {
@@ -233,11 +224,7 @@ public class Inicio extends Application {
         }
     }
 
-*/
-    
-    
-    
-
+     */
     public Scene getSceneT() {
         return sceneT;
     }

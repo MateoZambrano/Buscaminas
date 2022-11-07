@@ -5,6 +5,8 @@
  */
 package VistaBuscaminas;
 
+import Controlador.JuegoBuscaminas;
+import Controlador.NewFXMain;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -17,7 +19,10 @@ import javafx.scene.layout.GridPane;
  * @author Mateo
  */
 public class JuegoBuscaminasController implements Initializable {
-
+    
+    private JuegoBuscaminas Menu;
+    private NewFXMain Menu2;
+    
     @FXML
     private GridPane gdpButtons;
     
@@ -29,6 +34,14 @@ public class JuegoBuscaminasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+
+    public void setProgramaPrincipal(JuegoBuscaminas ProgramaPrincipal){
+        this.Menu = ProgramaPrincipal;
+    }
+    
+    public void setProgramaPrincipal(NewFXMain ProgramaPrincipal){
+        this.Menu2 = ProgramaPrincipal;
+    }
     
 }

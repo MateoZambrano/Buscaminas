@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import VistaBuscaminas.JuegoBuscaminasController;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -32,9 +33,14 @@ public class JuegoBuscaminas extends Application {
             loader.setLocation(JuegoBuscaminas.class.getResource("/VistaBuscaminas/JuegoBuscaminas.fxml"));
             Pane ventana = (Pane) loader.load();
 
-            // Show the scene containing the root layout.
+            // Muestra la escena que contiene el diseño raíz.
             Scene scene = new Scene(ventana);
             primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            
+            JuegoBuscaminasController ventanaAbierta = loader.getController();
+            ventanaAbierta.setProgramaPrincipal(this);
+            
             primaryStage.show();
         } catch (IOException e) {
             System.out.println(e.getMessage());

@@ -5,6 +5,9 @@
  */
 package Modelo;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author Usuario
@@ -13,7 +16,20 @@ public class pruebas {
     
     public static void main(String[] args) {
         Conexion con = new Conexion();
-        con.connectDb();
+        
+        Statement st;
+        ResultSet rs;
+        try{
+            st = con.conn.createStatement();
+            rs = st.executeQuery("select * from usuario");
+            while(rs.next()){
+                System.out.println(rs.getInt("id")+" "+rs.getString("nombre")+" "+rs.getString("pasword")+" "+rs.getInt("puntaje"));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
+    
+    
     
 }
