@@ -3,9 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/ProyBuscaminas/Tablero.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Imagenes/Principal.png</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Imagenes/Iniciar%20Sesion.jpg</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/InicioBuscaminasController.java</file>
             <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/ProyBuscaminas/PantallaJuego.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/ProyBuscaminas/Compartimiento.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Imagenes/Pantalla_principal.png</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Imagenes/Registro%20-%20copia.jpg</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/JuegoBuscaminasController.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/IniciarSecion.fxml</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Controlador/JuegoBuscaminas.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/IniciarSecionController.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Controlador/Inicio.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Imagenes/Principal%20-%20copia.png</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/JuegoBuscaminas.fxml</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Modelo/IniciarSesion.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Controlador/NewFXMain.java</file>
         </group>
     </open-files>
 </project-private>
