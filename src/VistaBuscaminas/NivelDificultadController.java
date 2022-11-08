@@ -5,7 +5,6 @@
  */
 package VistaBuscaminas;
 
-import Controlador.Inicio;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,17 +17,14 @@ import javafx.scene.control.Button;
  *
  * @author Mateo
  */
-public class InicioBuscaminasController implements Initializable {
+public class NivelDificultadController implements Initializable {
 
     @FXML
-    private Button btnRegistro;
+    private Button btnFacil;
     @FXML
-    private Button btnVerPuntuaciones;
-    
-    private Inicio MenuPrincipal;
-    
+    private Button btnRegular;
     @FXML
-    private Button btnIniciarJuego;
+    private Button btnInfierno;
 
     /**
      * Initializes the controller class.
@@ -39,21 +35,15 @@ public class InicioBuscaminasController implements Initializable {
     }    
 
     @FXML
-    private void iniciarJuego(ActionEvent event) {
-        MenuPrincipal.llamarSegundaVentana();
+    private void Facil(ActionEvent event) {
     }
 
     @FXML
-    private void registro(ActionEvent event) {
-        MenuPrincipal.llamarRegistro();
+    private void Regular(ActionEvent event) {
     }
 
     @FXML
-    private void verPuntuaciones(ActionEvent event) {
+    private void Infierno(ActionEvent event) {
     }
     
-    
-    public void setProgramaPrincipal(Inicio ProgramaPrincipal){
-        this.MenuPrincipal = ProgramaPrincipal;
-    }
 }

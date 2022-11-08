@@ -20,7 +20,7 @@ public class pruebas {
         Statement st;
         ResultSet rs;
         try{
-            st = con.conn.createStatement();
+            st = con.getConn().createStatement();
             rs = st.executeQuery("select * from usuario");
             while(rs.next()){
                 System.out.println(rs.getInt("id")+" "+rs.getString("nombre")+" "+rs.getString("pasword")+" "+rs.getInt("puntaje"));

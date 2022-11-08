@@ -15,7 +15,11 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
     
-    Connection conn;
+    private Connection conn;
+
+    public Connection getConn() {
+        return conn;
+    }
 
     public Conexion() {
         try {

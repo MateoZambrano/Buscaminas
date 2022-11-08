@@ -5,7 +5,7 @@
  */
 package VistaBuscaminas;
 
-import Controlador.NewFXMain;
+import Controlador.Inicio;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -24,12 +24,14 @@ public class IniciarSecionController implements Initializable {
     @FXML
     private TextField txtNombreUsuario;
     
-    private NewFXMain Menu;
+    private Inicio Menu;
     
     @FXML
     private TextField txtPastword;
     @FXML
     private Button btnConfirmar;
+    @FXML
+    private Button btnAtras;
    
     /**
      * Initializes the controller class.
@@ -44,17 +46,20 @@ public class IniciarSecionController implements Initializable {
     }
 
     
-    public void setProgramaPrincipal(NewFXMain ProgramaPrincipal){
+    public void setProgramaPrincipal(Inicio ProgramaPrincipal){
         this.Menu = ProgramaPrincipal;
     }
     
 
     @FXML
     private void iniciarSesion(ActionEvent event) {
-        System.out.println(txtNombreUsuario.getText());
-        System.out.println(txtPastword.getText());
         
-        Menu.llamarSegundaVentanaJuego();
+        Menu.llamarSegundaVentana();
+    }
+
+    @FXML
+    private void buttonAtras(ActionEvent event) {
+        Menu.initRootLayout();
     }
     
 }
