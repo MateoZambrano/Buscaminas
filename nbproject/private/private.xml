@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/RegistroController.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/NivelDificultadController.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/IniciarSecionController.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Controlador/Inicio.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Modelo/Conexion.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/Modelo/pruebas.java</file>
-            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/NivelDificultad.fxml</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/ProyBuscaminas/Tablero.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/ProyBuscaminas/PantallaJuego.java</file>
+            <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/ProyBuscaminas/Compartimiento.java</file>
             <file>file:/C:/Users/Mateo/Documents/NetBeansProjects/Buscaminas/src/VistaBuscaminas/JuegoBuscaminasController.java</file>
         </group>
     </open-files>

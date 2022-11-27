@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-
+import VistaBuscaminas.IniciarSecionController;
 import VistaBuscaminas.InicioBuscaminasController;
 import VistaBuscaminas.JuegoBuscaminasController;
 import VistaBuscaminas.RegistroController;
@@ -15,7 +15,6 @@ import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Inicio extends Application {
@@ -56,6 +55,7 @@ public class Inicio extends Application {
             // enviamos el administrador Principal a la ventana abierta
             InicioBuscaminasController controlador = loader.getController();
             controlador.setProgramaPrincipal(this);
+            
             primaryStage.show();
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -68,11 +68,15 @@ public class Inicio extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Inicio.class.getResource("/VistaBuscaminas/IniciarSecion.fxml"));
-            Pane ventana = (Pane) loader.load();
+             rootLaoyut = (BorderPane) loader.load();
 
-            // Muestra la escena que contiene el diseño raíz.
-            Scene scene = new Scene(ventana);
-            primaryStage.setScene(scene);
+            // Crear la escena
+            sceneT = new Scene(rootLaoyut);
+            primaryStage.setScene(sceneT);
+            primaryStage.setResizable(false);
+            
+            IniciarSecionController controlador = loader.getController();
+            controlador.setProgramaPrincipal(this);
             primaryStage.show();
 
         } catch (IOException e) {
