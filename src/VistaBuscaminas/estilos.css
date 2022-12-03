@@ -1,0 +1,36 @@
+.casilla {
+    -fx-background-color: #c0c0c0;
+    
+    -fx-min-width: 35px;
+    -fx-max-width: 35px;
+
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    
+	-fx-border-color: #d0d0d0 #b0b0b0 #b0b0b0 #d0d0d0;
+    -fx-border-width: 3;
+    
+    -fx-border-insets: 1px;
+}
+
+.casilla:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+.casilla:disabled {
+	-fx-border-color: #505050;
+    -fx-border-width: 0;
+}
+
+.casillaMina {
+	-fx-position-shape: true;
+	-fx-scale-shape: true;
+	-fx-background-color: red;
+	-fx-shape: "M6 32 L18 36 L20 40 L18 46 L24 44 L28 46 L32 58 L36 46 L40 44 L46 46 L44 40 L46 36 L58 32 L46 28 L44 24 L46 18 L40 20 L40 20 L36 18 L32 6 L28 18 L24 20 L18 18 L20 24 L18 28 Z";
+}
+
+.casillaBandera {
+	-fx-position-shape: true;
+	-fx-scale-shape: false;
+	-fx-shape: "M16 16 L16 48 L20 48 L20 32 L30 28 L38 32 L48 28 L48 12 L38 16 L28 12 Z";
+}

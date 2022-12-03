@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VistaBuscaminas.JuegoBuscaminasController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="608.0" fitWidth="606.0" layoutY="-1.0">
-               <image>
-                  <Image url="@../Imagenes/BUSCAMINASJUEGO.jpg" />
-               </image>
-            </ImageView>
-            <GridPane fx:id="gdpButtons" layoutX="88.0" layoutY="111.0" onDragDetected="#crearTablero" prefHeight="437.0" prefWidth="426.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="600" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.MiControlador">
+   <children>
+      <BorderPane prefHeight="634.0" prefWidth="600.0">
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button fx:id="botonNewGame" mnemonicParsing="false" text="Juego nuevo" />
+                  <Button fx:id="botonReset" mnemonicParsing="false" text="Resetear" />
+                  <Button fx:id="botonPersonalizar" mnemonicParsing="false" text="Personalizar" />
+                  <Button fx:id="botonMenu" mnemonicParsing="false" onAction="#menuInicio" prefHeight="26.0" prefWidth="86.0" text="Menu" />
+                  <Label fx:id="vidasRestantes" text="Vidas restantes: " />
+              </items>
+            </ToolBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                        <GridPane fx:id="terrenoMinas" gridLinesVisible="true" layoutX="118.0" layoutY="175.0" prefHeight="80.0" prefWidth="364.0">
+                     <columnConstraints>
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>

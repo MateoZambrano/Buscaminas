@@ -5,15 +5,17 @@
  */
 package Controlador;
 
+import Modelo.MiControlador;
 import VistaBuscaminas.IniciarSecionController;
 import VistaBuscaminas.InicioBuscaminasController;
-import VistaBuscaminas.JuegoBuscaminasController;
 import VistaBuscaminas.RegistroController;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -24,6 +26,7 @@ public class Inicio extends Application {
     public static Scene scenePausa;
     private BorderPane rootLaoyut; // Es el borderPane
     public static Scene sceneT;
+    public Parent root;
 
     public static void main(String[] args) {
         launch(args);
@@ -34,6 +37,7 @@ public class Inicio extends Application {
         primaryStage = stage;
         primaryStagePausa = new Stage();
         primaryStage.setTitle("Buscaminas"); // Titulo
+        primaryStage.getIcons().add(new Image("imgs/mnsw.png"));//El icono de el juego
         initRootLayout();
     }
 
@@ -44,6 +48,7 @@ public class Inicio extends Application {
             // Para cargar el archivo fxml
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Inicio.class.getResource("/VistaBuscaminas/InicioBuscaminas.fxml"));
+
             rootLaoyut = (BorderPane) loader.load();
 
             // Crear la escena
@@ -55,7 +60,7 @@ public class Inicio extends Application {
             // enviamos el administrador Principal a la ventana abierta
             InicioBuscaminasController controlador = loader.getController();
             controlador.setProgramaPrincipal(this);
-            
+
             primaryStage.show();
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -68,13 +73,13 @@ public class Inicio extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Inicio.class.getResource("/VistaBuscaminas/IniciarSecion.fxml"));
-             rootLaoyut = (BorderPane) loader.load();
+            rootLaoyut = (BorderPane) loader.load();
 
             // Crear la escena
             sceneT = new Scene(rootLaoyut);
             primaryStage.setScene(sceneT);
             primaryStage.setResizable(false);
-            
+
             IniciarSecionController controlador = loader.getController();
             controlador.setProgramaPrincipal(this);
             primaryStage.show();
@@ -83,8 +88,6 @@ public class Inicio extends Application {
             System.out.println(e.getMessage());
         }
     }
-    
-    
 
     public void llamarRegistro() {
 
@@ -112,21 +115,24 @@ public class Inicio extends Application {
         }
     }
 
+    
+
     public void abrirJuego() {
 
         try {
 
             // Para cargar el archivo fxml
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Inicio.class.getResource("/Vista/JuegoBuscaminas.fxml"));
-            rootLaoyut = (BorderPane) loader.load();
+            root = FXMLLoader.load(Inicio.class.getResource("/VistaBuscaminas/JuegoBuscaminas.fxml"));
+            //ImageView BUSCAMINASJUEGO = new ImageView("Imagenes/BUSCAMINASJUEGO.jpg");
 
-            // Crear la escena
-            scenePausa = new Scene(rootLaoyut);
-            primaryStagePausa.setScene(scenePausa);
-            primaryStagePausa.setResizable(false);
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(true);
+            //primaryStage.getIcons().add(new Image("imgs/mnsw.png"));
+           
 
-            JuegoBuscaminasController controlador = loader.getController();
+            MiControlador controlador = loader.getController();
             controlador.setProgramaPrincipal(this);
             primaryStagePausa.show();
 
@@ -134,7 +140,8 @@ public class Inicio extends Application {
             System.out.println("Error al cargar archivo externo");
         }
     }
-/*
+
+    /*
     public void abrirVentanaGameOver() {
         try {
             // Para cargar el archivo fxml
