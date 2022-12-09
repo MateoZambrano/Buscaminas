@@ -77,7 +77,7 @@ public class MiControlador implements Initializable {
         vidas = 5;
 
         juegoNuevo();
-
+        //ventanaJuego.initRootLayout();
         /*
 		 * He modificado las siguientes acciones reescribiéndolas en expresiones lambda.
          */
@@ -86,6 +86,16 @@ public class MiControlador implements Initializable {
         botonReset.setOnAction(p -> {
             juego.reset();
             construirTablero();
+            
+        
+        });
+        
+        botonMenu.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent p) {
+                ventanaJuego.initRootLayout();
+                
+            }
         });
 
         botonPersonalizar.setOnAction(p -> {
@@ -95,9 +105,9 @@ public class MiControlador implements Initializable {
             personal.setTitle("Personalizar buscaminas");
             personal.setHeaderText("Elige un modo de juego");
 
-            Button principiante = new Button("Principiante");
-            Button intermedio = new Button("Intermedio");
-            Button avanzado = new Button("Avanzado");
+            Button principiante = new Button("Primiparo");
+            Button intermedio = new Button("Fanboy");
+	    Button avanzado = new Button("El mismísimo infierno");
             Button personalizar = new Button("Personalizar...");
 
             formulario.add(principiante, 0, 0);

@@ -7,6 +7,7 @@ package VistaBuscaminas;
 
 import Controlador.Inicio;
 import Modelo.Conexion;
+import Modelo.sql;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,15 +25,15 @@ import javax.swing.JOptionPane;
  * @author Mateo
  */
 public class RegistroController implements Initializable {
-    
+
     ResultSet rs = null;
     PreparedStatement pst = null;
 
     @FXML
     private Button btnAtras;
-    
+
     private Inicio MenuVentana;
-    
+
     @FXML
     private Button btnSiguiente;
     @FXML
@@ -48,7 +49,7 @@ public class RegistroController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void buttonAtras(ActionEvent event) {
@@ -57,46 +58,55 @@ public class RegistroController implements Initializable {
 
     @FXML
     private void buttonSiguiente(ActionEvent event) {
-        
+
         String usuario = txtCampoUsuario.getText();
         String contrasenia = txtCampoContraseña.getText();
         String contrasenia2 = txtSegundaContraseña.getText();
-        int contador = 2;
-        
-        if(txtCampoUsuario.getText().equals("") && txtCampoContraseña.getText().equals("") && txtSegundaContraseña.getText().equals("")){
+        sql s = new sql();
+        int contador = s.id_incrementable();
+        Conexion conexion = new Conexion();
+
+        if (txtCampoUsuario.getText().equals("") && txtCampoContraseña.getText().equals("") && txtSegundaContraseña.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Ingresar datos validos");
-        }else if(contrasenia.equals(contrasenia2)){
+        } else if (contrasenia.equals(contrasenia2)) {
             //Conexion conexion = new Conexion();
             String sql = "insert into usuario (id,nombre,pasword,puntaje)values(?,?,?,?)";
-            
-            try{
-                Conexion conexion = new Conexion();
-                
+
+            try {
+               
+
                 //pst Manda la informacion a la base de datos
                 pst = conexion.getConn().prepareCall(sql);
-                pst.setInt(1, contador++);
+                pst.setInt(1, contador);
                 pst.setString(2, usuario);
                 pst.setString(3, contrasenia);
                 pst.setInt(4, 0);
                 pst.execute();
+                
                 //informa al usuario que ha sidi añadido
                 JOptionPane.showMessageDialog(null, "Usuario añadido");
-                
+
                 //REsetear los valores para que se vea mejor
                 txtCampoUsuario.setText("");
                 txtCampoContraseña.setText("");
                 txtSegundaContraseña.setText("");
-                
-            }catch(Exception e){
-               JOptionPane.showMessageDialog(null, e);
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }finally{
+                try{
+                    pst.close();
+                    rs.close();
+                }catch(Exception ex){
+                    
+                }
             }
+
         }
     }
-    
-    
-    public void setProgramaPrincipal(Inicio programaPrincipal){
+
+    public void setProgramaPrincipal(Inicio programaPrincipal) {
         this.MenuVentana = programaPrincipal;
     }
-    
-    
+
 }
